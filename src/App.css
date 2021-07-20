@@ -143,6 +143,8 @@ select {
   background-color: rgb(92, 91, 91);
 }
 
+/* queries */
+
 @media (max-width: 1500px){
   header, form {
     min-height: 11vh;

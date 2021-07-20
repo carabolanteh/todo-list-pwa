@@ -1,4 +1,4 @@
-// import {db} from '../firebase-config';
+import {db} from '../firebase-config';
 
 const Form = ({setTodos, todos, inputText, setInputText, setStatus}) => {
     
@@ -25,13 +25,13 @@ const Form = ({setTodos, todos, inputText, setInputText, setStatus}) => {
     }
 
     const guardarEnFirebase = tarea =>{
-        // db.collection("todos").add(tarea)
-        // .then((docRef) => {
-        //     console.log("Document written with ID: ", docRef.id);
-        // })
-        // .catch((error) => {
-        //      console.error("Error adding document: ", error);
-        // });
+        db.collection("todos").add(tarea)
+        .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch((error) => {
+             console.error("Error adding document: ", error);
+        });
     }
 
     return(

@@ -1,13 +1,13 @@
-// import {db} from '../firebase-config';
+import {db} from '../firebase-config';
 
 
 const Todo = ({todo, todos, setTodos}) => {
     const deleteHandler = () => {
-        // db.collection("todos").doc(todo.id).delete().then(() => {
-        //   console.log("Document successfully deleted!");
-        // }).catch((error) => {
-        //     console.error("Error removing document: ", error);
-        // });
+        db.collection("todos").doc(todo.id).delete().then(() => {
+          console.log("Document successfully deleted!");
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
       }
     
     const completeHandler = () => {
@@ -15,15 +15,15 @@ const Todo = ({todo, todos, setTodos}) => {
     }
 
     const editarCompleted = tarea => {
-        // db.collection("todos").doc(tarea.id).set({
-        //     ...tarea, completed: !tarea.completed
-        // })
-        // .then(() => {
-        //     console.log("Document successfully written!");
-        // })
-        // .catch((error) => {
-        //     console.error("Error writing document: ", error);
-        // });
+        db.collection("todos").doc(tarea.id).set({
+            ...tarea, completed: !tarea.completed
+        })
+        .then(() => {
+            console.log("Document successfully written!");
+        })
+        .catch((error) => {
+            console.error("Error writing document: ", error);
+        });
 
      }
 

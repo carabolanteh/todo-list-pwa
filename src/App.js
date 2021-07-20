@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import './App.css';
 
 
-// import { db } from './firebase-config'
+import { db } from './firebase-config'
 
 import Form from './components/Form';
 import TodoList from './components/TodoList';
@@ -15,13 +15,13 @@ function App() {
   const [filteredTodos, setFilteredTodos] = useState([]);
 
   const traerDesdeFirebase = () => {
-    // db.collection("todos").onSnapshot((querySnapshot) => {
-    //   const docs = [];
-    //   querySnapshot.forEach((doc) => {
-    //       docs.push({...doc.data(), id: doc.id});
-    //   });
-    //   setTodos(docs);
-    // });
+    db.collection("todos").onSnapshot((querySnapshot) => {
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+          docs.push({...doc.data(), id: doc.id});
+      });
+      setTodos(docs);
+    });
   }
 
 

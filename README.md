@@ -34,7 +34,7 @@
 <br>
 
 
-![imagen](./img/ScreenShot-TodoList.png)
+![imagen](./src/img/ScreenShot-TodoList.png)
 
 <br>
 
